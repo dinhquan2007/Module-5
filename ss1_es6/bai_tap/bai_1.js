@@ -30,19 +30,13 @@ let courses = [
     }
 ];
 // yêu cầu 1
-const newArray = courses.filter(element => {
-    return element.rating > 4;
-})
+const newArray = courses.filter(element => (element.rating > 4))
 console.log(newArray);
 // yêu cầu 2
 
-const lastArray=courses.filter(element=>{
-    return element.rating<4;
-})
+const lastArray=courses.filter(element=>(element.rating<4))
 
- const newArray2 = lastArray.map(element => {
-     return "<"+ element.id+">" + "-" +"<"+ element.rating+">" + "-" +"<"+element.title+">";
- })
+ const newArray2 = lastArray.map(element =>("<"+ element.id+">" + "-" +"<"+ element.rating+">" + "-" +"<"+element.title+">"))
 console.log(newArray2)
 // yêu cầu 3
 let addedCourses = [
