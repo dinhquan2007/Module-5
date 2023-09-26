@@ -1,19 +1,109 @@
+import {useNavigate, useParams} from "react-router-dom";
+import {createCustomer, getCustomer, saveCustomer} from "../../service/customer";
+import {Field, Form, Formik} from "formik";
+import {useEffect, useState} from "react";
+import {getAllType} from "../../service/type_customer";
+import {toast} from "react-toastify";
+
 function FormEdit() {
+    const param=useParams();
+    const [customer,setCustomer]=useState(null)
+    const navigate=useNavigate();
+    const [listType, setListType] = useState([]);
+
+
+
+    const getCustomerById=async ()=>{
+        const c= await getCustomer(param.id)
+        setCustomer(c);
+    }
+
+    const handleGetList = async () => {
+        try {
+            const list = await getAllType();
+            setListType(list);
+        } catch (error) {
+            console.log("Error fetching list:", error);
+        }
+    };
+    const handleSubmit =async (data) => {
+       data.type=JSON.parse(data.type)
+        const res= await saveCustomer(data);
+        console.log(res)
+        if (res.status===200){
+            navigate("/customer/list");
+            toast("chỉnh sửa thành công")
+        }else {
+            toast("chỉnh sửa thất bại")
+        }
+    }
+    useEffect(() => {
+        handleGetList()
+    }, []);
+    useEffect(()=>{
+     getCustomerById()
+    },[param.id])
+    if (customer===null){
+        return null;
+    }
     return (
-        <div className="container mt-4">
-            <h2>Edit</h2>
-            <form>
-                <div className="mb-3">
-                    <label htmlFor="name" className="form-label">Name</label>
-                    <input type="text" className="form-control" id="name" />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="description" className="form-label">Description</label>
-                    <textarea className="form-control" id="description" rows="3"/>
-                </div>
-                <button type="submit" className="btn btn-primary">Save</button>
-            </form>
-        </div>
+        <Formik
+            initialValues={{
+                ...customer,
+                type:JSON.stringify(customer.type)
+            }}
+            onSubmit={values => {
+                handleSubmit(values)
+            }
+            }
+        >
+            <div className="container mt-4">
+                <h2>Chỉnh sửa thông tin khách hàng</h2>
+                <Form>
+                    <div className="mb-3">
+                        <label htmlFor="name" className="form-label">Tên</label>
+                        <Field name="name" type="text" className="form-control" id="name"/>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="birth" className="form-label">Ngày sinh</label>
+                        <Field name="birth" type="date" className="form-control" id="birth"/>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="gender" className="form-label">Giới tính</label>
+                        <Field name="gender" as="select" className="form-control" id="gender">
+                            <option value="1">Nam</option>
+                            <option value="0">Nữ</option>
+                        </Field>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="idCard" className="form-label">CCCD</label>
+                        <Field name="idCard" type="text" className="form-control" id="idCard"/>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="phone" className="form-label">Điện thoại</label>
+                        <Field name="phone" className="form-control" id="phone" type="text"/>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="email" className="form-label">Email</label>
+                        <Field type="text" name="email" className="form-control" id="email"/>
+                    </div>
+                    <div className="mb-3">
+                        <Field as="select" name="type">
+                            <option value="chọn loại khách hàng">Chọn loại khách hàng</option>
+                            {listType.map((type, index) => (
+                                    <option key={index} value={JSON.stringify(type)}>{type.name}</option>
+                                )
+                            )}
+                        </Field>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="address" className="form-label">Địa chỉ</label>
+                        <Field type="text" name="address" className="form-control" id="address"/>
+                    </div>
+                    <button type="submit" className="btn btn-primary">Lưu</button>
+                </Form>
+            </div>
+        </Formik>
     );
 }
 export default FormEdit;
