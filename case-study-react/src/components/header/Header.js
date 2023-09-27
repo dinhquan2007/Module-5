@@ -17,7 +17,7 @@ function Header() {
                                 <a className="nav-link" href="/facility/list">Facility</a>
                             </li>
                              <li className="nav-item">
-                                <a className="nav-link" href="/contract">Contact</a>
+                                <a className="nav-link" href="/contract/list">Contact</a>
                             </li>
                              <li className="nav-item">
                                 <a className="nav-link" href="/customer/list">Customer</a>

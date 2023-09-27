@@ -21,6 +21,164 @@
       "name": "Member"
     }
   ],
-  "customer": [],
-  "facility":[]
+  "customer": [
+    {
+      "name": "Ngô Đình Quân",
+      "birth": "2222-02-11",
+      "gender": "0",
+      "idCard": "123312312312",
+      "phone": "0123456789",
+      "email": "hoangnhat3103@gmail.com",
+      "type": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "address": "âsdasdas",
+      "id": 1
+    },
+    {
+      "name": "Quân Gà",
+      "birth": "2025-02-02",
+      "gender": "0",
+      "idCard": "765678483",
+      "phone": "0123456789",
+      "email": "123@gmail.com",
+      "type": {
+        "id": 5,
+        "name": "Member"
+      },
+      "address": "Chuồng gà",
+      "id": 2
+    }
+  ],
+  "facility": [
+    {
+      "id": 1,
+      "name": "Villa Beach Front",
+      "acreage": 25000,
+      "rentalCost": 10000000,
+      "maxSlot": 10,
+      "rentalType": "month",
+      "typeService": {
+        "id": 1,
+        "name": "villa"
+      }
+    },
+    {
+      "id": 2,
+      "name": "House Beach Front",
+      "acreage": 14000,
+      "rentalCost": 5000000,
+      "maxSlot": 10,
+      "rentalType": "month",
+      "typeService": {
+        "id": 2,
+        "name": "House"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Villa Beach Front",
+      "acreage": 25000,
+      "rentalCost": 10000000,
+      "maxSlot": 10,
+      "rentalType": "month",
+      "typeService": {
+        "id": 1,
+        "name": "villa"
+      }
+    }
+  ],
+  "typeService": [
+    {
+      "id": 1,
+      "name": "villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "code": "001-house",
+      "dateStart": "2022-02-02",
+      "dateEnd": "2023-03-03",
+      "deposits": "1000000",
+      "totalAmount": "5000000"
+    },
+    {
+      "id": 2,
+      "code": "001-house",
+      "dateStart": "2022-02-02",
+      "dateEnd": "2023-03-03",
+      "deposits": "1000000",
+      "totalAmount": "5000000"
+    },
+    {
+      "id": 3,
+      "code": "001-house",
+      "dateStart": "2022-02-02",
+      "dateEnd": "2023-03-03",
+      "deposits": "1000000",
+      "totalAmount": "5000000"
+    },
+    {
+      "id": 4,
+      "code": "001-house",
+      "dateStart": "2022-02-02",
+      "dateEnd": "2023-03-03",
+      "deposits": "1000000",
+      "totalAmount": "5000000"
+    },
+    {
+      "id": 5,
+      "code": "001-house",
+      "dateStart": "2022-02-02",
+      "dateEnd": "2023-03-03",
+      "deposits": "1000000",
+      "totalAmount": "5000000"
+    },
+    {
+      "id": 6,
+      "code": "001-house",
+      "dateStart": "2022-02-02",
+      "dateEnd": "2023-03-03",
+      "deposits": "1000000",
+      "totalAmount": "5000000"
+    },
+    {
+      "id": 7,
+      "code": "001-house",
+      "dateStart": "2022-02-02",
+      "dateEnd": "2023-03-03",
+      "deposits": "1000000",
+      "totalAmount": "5000000"
+    },
+    {
+      "id": 8,
+      "code": "001-house",
+      "dateStart": "2022-02-02",
+      "dateEnd": "2023-03-03",
+      "deposits": "1000000",
+      "totalAmount": "5000000"
+    },
+    {
+      "id": 9,
+      "code": "001-house",
+      "dateStart": "2022-02-02",
+      "dateEnd": "2023-03-03",
+      "deposits": "1000000",
+      "totalAmount": "5000000"
+    },
+    {
+      "id": 10,
+      "code": "001-house",
+      "dateStart": "2022-02-02",
+      "dateEnd": "2023-03-03",
+      "deposits": "1000000",
+      "totalAmount": "5000000"
+    }
+  ]
 }

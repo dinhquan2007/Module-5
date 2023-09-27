@@ -9,6 +9,8 @@ import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import FormEdit from "./components/customer/FormEdit";
 import Facility from "./components/facility/Facility";
+import ListContact from "./components/contact/ListContact";
+import 'react-bootstrap'
 
 function App() {
     return (
@@ -19,6 +21,7 @@ function App() {
                 <Route path="/customer/list" element={<ListCustomer/>}/>
                 <Route path="/customer/edit/:id" element={<FormEdit/>}/>
                 <Route path="/facility/list" element={<Facility/>}/>
+                <Route path="/contract/list" element={<ListContact/>}/>
             </Routes>
             <Footer/>
             <ToastContainer autoClose={2000}/>

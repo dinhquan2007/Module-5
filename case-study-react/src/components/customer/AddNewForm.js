@@ -4,7 +4,6 @@ import {useEffect, useState} from "react";
 import {createCustomer} from "../../service/customer";
 import {toast} from 'react-toastify';
 import {useNavigate} from 'react-router-dom'
-
 function AddCustomer() {
     const navigate=useNavigate();
     const [listType, setListType] = useState([]);
