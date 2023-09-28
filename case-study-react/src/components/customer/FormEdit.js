@@ -4,6 +4,7 @@ import {Field, Form, Formik} from "formik";
 import {useEffect, useState} from "react";
 import {getAllType} from "../../service/type_customer";
 import {toast} from "react-toastify";
+import * as yub from "yup";
 
 function FormEdit() {
     const param=useParams();
@@ -47,6 +48,7 @@ function FormEdit() {
         return null;
     }
     return (
+        customer&&
         <Formik
             initialValues={{
                 ...customer,
@@ -55,6 +57,18 @@ function FormEdit() {
             onSubmit={values => {
                 handleSubmit(values)
             }
+            }
+            validationSchema={yub.object(
+                {
+                    name: yub.string().required("không được để trống"),
+                    birth: yub.string().required("không được để trống"),
+                    gender: yub.string().required("không được để trống"),
+                    idCard: yub.string().required("không được để trống"),
+                    phone: yub.string().required("không được để trống"),
+                    email: yub.string().required("không được để trống")
+                }
+            )
+
             }
         >
             <div className="container mt-4">

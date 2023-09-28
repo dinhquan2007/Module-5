@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -10,8 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import FormEdit from "./components/customer/FormEdit";
 import Facility from "./components/facility/Facility";
 import ListContact from "./components/contact/ListContact";
-import 'react-bootstrap'
-
+import CreateContract from "./components/contact/CreateContract";
 function App() {
     return (
         <div className="App">
@@ -22,6 +20,8 @@ function App() {
                 <Route path="/customer/edit/:id" element={<FormEdit/>}/>
                 <Route path="/facility/list" element={<Facility/>}/>
                 <Route path="/contract/list" element={<ListContact/>}/>
+                <Route path="/contract/create" element={<CreateContract/>}/>
+
             </Routes>
             <Footer/>
             <ToastContainer autoClose={2000}/>

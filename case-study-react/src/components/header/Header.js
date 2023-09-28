@@ -22,8 +22,6 @@ function Header() {
                              <li className="nav-item">
                                 <a className="nav-link" href="/customer/list">Customer</a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="/customer/create">thêm mới</a>                            </li>
                             {/* Add more navigation items here */}
                         </ul>
                     </div>

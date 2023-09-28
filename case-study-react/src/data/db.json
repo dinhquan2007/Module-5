@@ -24,31 +24,17 @@
   "customer": [
     {
       "name": "Ngô Đình Quân",
-      "birth": "2222-02-11",
-      "gender": "0",
+      "birth": "1999-09-06",
+      "gender": "1",
       "idCard": "123312312312",
       "phone": "0123456789",
-      "email": "hoangnhat3103@gmail.com",
+      "email": "dinhquan2007@gmail.com",
       "type": {
         "id": 1,
         "name": "Diamond"
       },
-      "address": "âsdasdas",
+      "address": "Đà nẵng",
       "id": 1
-    },
-    {
-      "name": "Quân Gà",
-      "birth": "2025-02-02",
-      "gender": "0",
-      "idCard": "765678483",
-      "phone": "0123456789",
-      "email": "123@gmail.com",
-      "type": {
-        "id": 5,
-        "name": "Member"
-      },
-      "address": "Chuồng gà",
-      "id": 2
     }
   ],
   "facility": [
@@ -179,6 +165,22 @@
       "dateEnd": "2023-03-03",
       "deposits": "1000000",
       "totalAmount": "5000000"
+    },
+    {
+      "code": "MU-001",
+      "dateStart": "2023-09-06",
+      "dateEnd": "2023-09-15",
+      "deposits": 1212121,
+      "totalAmount": 123123123,
+      "id": 11
+    },
+    {
+      "code": "AG-001",
+      "dateStart": "1998-12-12",
+      "dateEnd": "1999-12-12",
+      "deposits": 123,
+      "totalAmount": 123123,
+      "id": 12
     }
   ]
 }
