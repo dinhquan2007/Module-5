@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {getAllFacility} from "../../service/facility";
+import {Link} from "react-router-dom";
 
 function Facility() {
     const [listService,setListService]=useState([]);
@@ -15,6 +16,13 @@ function Facility() {
         <div className="container">
             <div className="d-flex justify-content-center">
                 <h1>Danh sách dịch vụ</h1>
+            </div>
+            <div className="input-group float-start">
+                <Link className="nav-link" to="/facility/create">
+                    <button className="btn btn-primary">
+                        thêm mới
+                    </button>
+                </Link>
             </div>
             <div className="row">
             {listService.map((f)=>(

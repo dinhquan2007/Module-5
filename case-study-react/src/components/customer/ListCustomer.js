@@ -10,6 +10,7 @@ function ListCustomer() {
     const [customer, setCustomer] = useState({});
     const [show, setShow] = useState(false);
     const [searchName, setSearchName] = useState("");
+    const [page,setPage]=useState(0)
     const handleOnClick = (data) => {
         setCustomer(data);
         setShow(true);
@@ -17,7 +18,7 @@ function ListCustomer() {
 
     const list = async () => {
         // const res= await getAllCustomer();
-        const res = await getCustomerForName(searchName, 0, 4);
+        const res = await getCustomerForName(searchName, page, 4);
         console.log(res)
         setListCustomer(res);
     }
@@ -25,7 +26,7 @@ function ListCustomer() {
         const res = await removeCustomer(customer.id);
         setShow(false)
         //tắt modal
-        if (res.status === 200) {
+        if (res.status === 204) {
             toast("xóa thành công")
             // navigate("/customer/list")
         }
@@ -62,7 +63,7 @@ function ListCustomer() {
                     <tr>
                         <th>STT</th>
                         <th>Tên</th>
-                        <th>Ngày sinh</th>
+                        <th>Mã khách hàng</th>
                         <th>Giới tính</th>
                         <th>CCCD</th>
                         <th>Điện thoại</th>

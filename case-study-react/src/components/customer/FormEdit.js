@@ -85,8 +85,8 @@ function FormEdit() {
                     <div className="mb-3">
                         <label htmlFor="gender" className="form-label">Giới tính</label>
                         <Field name="gender" as="select" className="form-control" id="gender">
-                            <option value="1">Nam</option>
-                            <option value="0">Nữ</option>
+                            <option value="true">Nam</option>
+                            <option value="false">Nữ</option>
                         </Field>
                     </div>
                     <div className="mb-3">

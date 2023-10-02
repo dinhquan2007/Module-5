@@ -10,6 +10,7 @@ import FormEdit from "./components/customer/FormEdit";
 import Facility from "./components/facility/Facility";
 import ListContact from "./components/contact/ListContact";
 import CreateContract from "./components/contact/CreateContract";
+import CreateFacility from "./components/facility/CreateFacility";
 function App() {
     return (
         <div className="App">
@@ -19,6 +20,7 @@ function App() {
                 <Route path="/customer/list" element={<ListCustomer/>}/>
                 <Route path="/customer/edit/:id" element={<FormEdit/>}/>
                 <Route path="/facility/list" element={<Facility/>}/>
+                <Route path="/facility/create" element={<CreateFacility/>}/>
                 <Route path="/contract/list" element={<ListContact/>}/>
                 <Route path="/contract/create" element={<CreateContract/>}/>
 

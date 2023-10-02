@@ -18,14 +18,17 @@ function AddCustomer() {
         }
     };
     const handleSubmit = async (data) => {
-        const newData = {...data, type: JSON.parse(data.type)}
+        const newData = {
+            ...data,
+            type: JSON.parse(data.type)}
         const res = await createCustomer(newData);
         if (res.status === 201) {
-            navigate("/customer/list");
+
             toast("thêm mới thành công")
         } else {
             toast("thêm mới thất bại")
         }
+        navigate("/customer/list");
     }
     const validate = yub.object(
         {
@@ -52,7 +55,7 @@ function AddCustomer() {
                 {
                     name: "",
                     birth: "",
-                    gender: "1",
+                    gender: "true",
                     idCard: "",
                     phone: "",
                     email: "",
@@ -94,8 +97,8 @@ function AddCustomer() {
                             <span className="input-group-text" style={{width: "30%"}}>Giới tính <span
                                 style={{color: "red"}}>*</span></span>
                             <Field name="gender" as="select" className="form-control" id="gender">
-                                <option value="1">Nam</option>
-                                <option value="0">Nữ</option>
+                                <option value="true">Nam</option>
+                                <option value="false">Nữ</option>
                             </Field>
 
                         </div>

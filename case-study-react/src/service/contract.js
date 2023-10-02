@@ -1,5 +1,4 @@
 import axios from "axios";
-import data from "bootstrap/js/src/dom/data";
 
 export const getAllContract=async ()=>{
     return(await axios.get("http://localhost:8100/contract")).data

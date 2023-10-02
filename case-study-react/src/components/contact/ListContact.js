@@ -4,7 +4,7 @@ import 'react-bootstrap'
 
 export default function ListContact() {
     const [listContract, setListContact] = useState([]);
-    const [searchName, setSearchName] = useState("")
+    // const [searchName, setSearchName] = useState("")
     const list = async () => {
         const res = await getAllContract();
         setListContact(res);
@@ -14,7 +14,7 @@ export default function ListContact() {
     }
     useEffect(() => {
         list()
-    }, [searchName])
+    }, [])
     return (
         <div className="container">
             <h1>Danh sách hợp đồng</h1>
@@ -26,15 +26,15 @@ export default function ListContact() {
                         </button>
                     </a>
                 </div>
-                <div className="input-group float-end m-3">
-                    <div className="form-group">
-                        <input className="form-control" type="text"
-                               onChange={(event) => setSearchName(event.target.value)}/>
-                    </div>
-                    <button className="btn btn-primary">
-                        Tìm kiếm
-                    </button>
-                </div>
+                {/*<div className="input-group float-end m-3">*/}
+                {/*    <div className="form-group">*/}
+                {/*        <input className="form-control" type="text"*/}
+                {/*               onChange={(event) => setSearchName(event.target.value)}/>*/}
+                {/*    </div>*/}
+                {/*    <button className="btn btn-primary">*/}
+                {/*        Tìm kiếm*/}
+                {/*    </button>*/}
+                {/*</div>*/}
             </div>
             <table className="table table-striped">
                 <thead>

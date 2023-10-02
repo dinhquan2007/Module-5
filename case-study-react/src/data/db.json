@@ -73,6 +73,18 @@
         "id": 1,
         "name": "villa"
       }
+    },
+    {
+      "name": "Houseeeee",
+      "acreage": "123323",
+      "rentalCost": "123123",
+      "maxSlot": "122",
+      "rentalType": "tháng",
+      "typeService": {
+        "id": 2,
+        "name": "House"
+      },
+      "id": 4
     }
   ],
   "typeService": [
